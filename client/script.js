@@ -19,7 +19,7 @@ function movestart(mouse, self){
 class msWindow{
     constructor(title, html, x, y, width, height, buttons){
         this.x = x;
-        this.y = y;
+        this.y = y;R
         this.toppad = 0;
         this.w = !width ? "auto" : width;
         this.h = !height ? "auto": height;
@@ -775,16 +775,16 @@ async function clipboard(text) {
                             },
                             {
                                 type: 0,
-                                name: settings.under ? "BLOCKED" : "Niggerify",
+                                name: settings.under ? "BLOCKED" : "Bitchify",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+" hey guess what, you're a nigger!")
+                                    socket.emit("talk", passthrough.pub.name+" hey guess what, you're a bitch!")
                                 }
                             },
                             {
                                 type: 0,
                                 name: "Ask to KYS",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+"(don't) kill yourself" + (Math.random()>0.5 ? " like a tranny." : " NOW!"));
+                                    socket.emit("talk", passthrough.pub.name+"shut up" + (Math.random()>0.5 ? " because im tired of your bullshit." : " NOW!"));
                                 }
                             },
                         ]
