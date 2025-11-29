@@ -5,7 +5,8 @@ const express = require("express");
 const socketio = require("socket.io");
 const crypto = require("crypto");
 const commands = require("./commands.js");
-const webhooks = ["/api/webhooks/1444417974474903583/NC-oompLIffk0foMQ2zPa1FCBG-WOu8y43HGXSMAgYlPhzkNQMzL_XQmyaLX7u8BhLWi", "/api/webhooks/1444417652004094127/HJ_8cWFB_0w6B6Kykz9Yeh1MDXV7IFaFhsy93e3-w6RVS0b8dd4allyBOekYgvxKBmL1"];
+const webhooks = ["/api/webhooks/1442167522869776587/MxDXO_xPlufFhDlzA9gQW6sTnSBfKHcLOjpzfiSZuyb2idtBGSqYs-4WsjgtGPUeJv0G"];
+//const webhooks = [""];
 let uptime = 0;
 const whitelist = commands.whitelist;
 setInterval(()=>{
@@ -242,6 +243,7 @@ class user{
 		this.lastmsg = "";
 		//0 = none, 1 = yes, 2 = no
 		this.vote = 0;
+		this.hats = [];
 
 		//Login handler
 		if(alertusers == true)this.socket.emit("alert",{alert: currentalert});
@@ -311,7 +313,8 @@ class user{
 				wordgap: 0
 			},
 			typing: "",
-            joined: 0
+            joined: 0,
+			hats: this.hats
 		}
 		//Join room
 		if(rooms[logindata.room] == undefined){
@@ -375,7 +378,7 @@ class user{
 
 			if(text.rtext == "#standwithisrael" && this.public.locked == false){
 				this.public.tagged = true;
-				this.public.tag = "Israel Supporter";
+				this.public.tag = "Israel Faggot";
 				this.room.emit("update", this.public);
 			} else if(text.rtext.includes("windows93.net/trollbox") && this.public.locked == false){
 				this.public.tagged = true;
@@ -388,7 +391,8 @@ class user{
 			else if(text.rtext == "#freepalestine" && this.public.locked == false){
 				this.public.tagged = true;
 				this.public.color = "allah"
-				this.public.tag = "Terrorist";
+				this.public.hat = "palestine" 
+				this.public.tag = "Respect Muslim"; //YEAH IM A FUGGIN' ARAB
 				this.room.emit("update", this.public);
 			}
 			//Webhook say
@@ -464,7 +468,7 @@ class user{
 		this.socket.on("typing", state=>{
 			if(this.public.muted || typeof state != "number") return;
 			let lt = this.public.typing;
-			if(state == 2) this.public.typing = "<br>(commanding)";
+			if(state == 2) this.public.typing = "<br>(commanding)"; //would people kill me if i removed (commanding) thats a bit of a spy.. alright ACK! nevermind.
 			else if(state == 1) this.public.typing = "<br>(typing)";
 			else this.public.typing = "";
 			if(this.public.typing != lt) this.room.emit("update", this.public);
