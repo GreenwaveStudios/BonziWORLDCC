@@ -65,17 +65,7 @@
 			{"type": 0, "text": "A woman."},
 			{"type": 1, "anim": "shrug_back"}
 		],
-		[
-			{"type": 0, "text": "Why can't asians drive?"},
-			{"type": 0, "text": "Because their eyes are always closed!"},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
-			{"type": 0, "text": "Black lives matter is a joke."},
-			{"type": 0, "text": "WHITE LIVES MATTER!"},
-			{"type": 1, "anim": "shrug_back"}
-		],
-		[
+				[
 			{"type": 0, "text": "Why was six afraid of seven?"},
 			{"type": 0, "text": "Because seven was a sex offender!"},
 			{"type": 1, "anim": "shrug_back"}

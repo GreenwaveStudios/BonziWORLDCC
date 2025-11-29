@@ -770,21 +770,21 @@ async function clipboard(text) {
                                 type: 0,
                                 name: "Pastule",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+" stop being a pastule.")
+                                    socket.emit("talk", passthrough.pub.name+", stop being a pastule.")
                                 }
                             },
                             {
                                 type: 0,
-                                name: settings.under ? "BLOCKED" : "Bitchify",
+                                name: settings.under ? "BLOCKED" : "Call a Stupid Bitch",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+" hey guess what, you're a bitch!")
+                                    socket.emit("talk", passthrough.pub.name+", guess what? You're a stupid bitch! You're a stupid fucking bitch! I can't believe how dumb you are.")
                                 }
                             },
                             {
                                 type: 0,
-                                name: "Ask to KYS",
+                                name: "Tell to STFU",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+"shut up" + (Math.random()>0.5 ? " because im tired of your bullshit." : " NOW!"));
+                                    socket.emit("talk", passthrough.pub.name+", shut the fuck up RIGHT NOW, " + (Math.random()>0.5 ? " because I'm tired of your bullshit." : " NOW!"));
                                 }
                             },
                         ]
@@ -793,7 +793,7 @@ async function clipboard(text) {
                 if(level >= 1){
                     cmenu.push({
                         type: 1,
-                        name: "Fun (MOD)",
+                        name: "Fun",
                         items: [
                           
                             {
@@ -825,7 +825,7 @@ async function clipboard(text) {
   
                     cmenu.push({
                       type: 1,
-                      name: "Moderation (MOD)",
+                      name: "Moderation",
                       items: [
                           {
                               type: 0,
@@ -888,7 +888,7 @@ async function clipboard(text) {
                 if(level >= 4){
                     cmenu.push({
                         type: 1,
-                        name:"Gamer POPE CMD",
+                        name:"Gamer Pope",
                         items: [
                             {
                                 type: 0,
@@ -1008,7 +1008,7 @@ async function clipboard(text) {
   
         //Socket event listeners
         socket.on("leave", guid=>{
-          pushlog(agents[guid].pub.dispname+" has just left.");
+          pushlog(agents[guid].pub.dispname+" hasleft.");
             agents[guid].kill();
           $("room_count").innerHTML = Object.keys(agents).length;
         })
