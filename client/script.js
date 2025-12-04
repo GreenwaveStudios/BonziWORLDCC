@@ -275,7 +275,7 @@ async function clipboard(text) {
                       </div>
                        <div class="applets_item">
                         <img src="/img/logo_readme.png" width="100" height="auto"/>
-                        <button id="minibw" class="msBtn"style="max-height:60px;max-width:100px;">Open Mini BonziWORLD</button>
+                        <button id="minibw" class="msBtn"style="max-height:60px;max-width:100px;">Markup and Hats</button>
                       </div>
                       <div class="applets_item">
                         <img src="/img/assets/notepad.png" width="50" height="auto"/>
@@ -311,13 +311,13 @@ async function clipboard(text) {
               `, undefined, undefined, undefined, undefined, [{ name: "Close" }]);
         },
         "applets_minibw": () => {
-            if (document.body.innerHTML.includes(`<button style="width:80px;height:30px;" class="msBtn" onclick="$('dialoguemini').innerText = 'Mini BonziWORLD';$('minicont').style.`)) return;
+            if (document.body.innerHTML.includes(`<button style="width:80px;height:30px;" class="msBtn" onclick="$('dialoguemini').innerText = 'Markup and Hats';$('minicont').style.`)) return;
             if ($('content').innerHTML.includes('<iframe id="minicont"')) return;
             new msWindow('Mini BonziWORLD', `
                 <div id="minicont"style="display:flex;flex-direction:column;width:max-content;max-width:`+ (window.innerWidth / 1.8) + `;">
-                <p id="dialoguemini">Useful for things such as being in<br>multiple rooms or whatever.</p>
-                <iframe src="https://bonzi.gay" width="`+ (window.innerWidth / 2) + `" height="400">Loading...</iframe></div>
-                    <button style="width:80px;height:30px;" class="msBtn" onclick="$('dialoguemini').innerText = 'Mini BonziWORLD';$('minicont').style.width = '30px';$('minicont').style.height = '30px';var r = this.onclick;this.innerText = 'Display Mini BW'; this.onclick = () => {this.onclick = r; $('minicont').style.width='`+ (window.innerWidth / 2 + 100) + `px'; $('minicont').style.height = '500px'; this.innerText = 'Hide Mini BW'};">Hide Mini BW</button>
+                <p id="dialoguemini">Find out the markup and hats.</p>
+                <iframe src="markupandhats.html" width="`+ (window.innerWidth / 2) + `" height="400">Loading...</iframe></div>
+                    <button style="width:80px;height:30px;" class="msBtn" onclick="$('dialoguemini').innerText = 'Markup and Hats';$('minicont').style.width = '30px';$('minicont').style.height = '30px';var r = this.onclick;this.innerText = 'Display'; this.onclick = () => {this.onclick = r; $('minicont').style.width='`+ (window.innerWidth / 2 + 100) + `px'; $('minicont').style.height = '500px'; this.innerText = 'Hide'};">Hide</button>
 
                 `, undefined, undefined, undefined, undefined, [
                 { name: "Close" }]);
