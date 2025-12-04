@@ -79,14 +79,9 @@ module.exports.commands = {
 			return;
 		}
 
-		const validHats = ["8", "back", "ballet", "bear", "beard", "bfdi", "bieber", "bowtie", "bucket", "bull",
-			"cake", "cap", "chain", "chef", "cigar", "clippy", "cobby", "cowboy", "crowd",
-			"dank", "demonmask", "dog", "elon", "evil", "gamer", "gangster", "glitch", "gromit", "gun", "hacker",
-			"headphones", "horse", "illuminati", "kamala", "kfc", "king", "kitty", "luigi", "maga", "mario", "mario2",
-			"megatron", "ninja", "northkorea", "obama", "opalchain", "palestine", "pan", "patrick", "pirate", "plauge",
-			"police", "pot", "premium", "propeller", "satan", "scarf", "shirt", "soldier", "speed", "sponge", "squiddy",
-			"stare", "tinymario", "tophat", "trash", "troll", "tv", "windows", "windows2", "windows3", "windows4",
-			"windows5", "windows6", "windows7", "windows8", "windows9", "windows10", "windows11", "windows12", "witch", "wizard"];
+		const validHats = ["bfdi", "bieber", "bowtie", "bucket", "bull", "cap", "chain", "chef", "cigar", "cowboy", "dank", "elon", 
+			"evil", "glitch", "horse", "illuminati", "illuminati2", "kfc", "king", "maga", "ninja", "pan", "pot", "propeller", "satan", "tophat", "trash", "troll", "witch", "wizard", "aids", "jartycuck"
+		];
 
 		let hatList = param.split(" ").filter(hat => hat.trim() !== "");
 
