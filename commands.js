@@ -33,6 +33,8 @@ let markuprules = {
 	"~~": "i",
 	"*g*": "span class=\"glowies-text\"",
 	"*b*": "span class=\"weird-text\"",
+	"*z*": "span class=\"singularity\"",
+	"$mutt$": "span class=\"flag-text\"",
 	"*rage*": "span class=\"red-glow-shake\"",
 	"###": "font style='animation: rainbow 3s infinite;'",
 	"^^": "font size=5",

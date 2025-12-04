@@ -685,7 +685,7 @@ span .bubble_text{
     0 0 28px rgba(255, 0, 0, 0.20);
   animation:
     glow 1.8s ease-in-out infinite,
-    shake 0.6s linear infinite;
+    shake 0.5s linear infinite;
   will-change: transform, text-shadow;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -742,18 +742,19 @@ span .bubble_text{
 
 /* shake animation: quick horizontal + tiny rotate jitter */
 @keyframes shake {
-  0%   { transform: translateX(0) rotate(0deg); }
-  10%  { transform: translateX(-2px) rotate(-0.8deg); }
-  20%  { transform: translateX(2px)  rotate(0.8deg); }
-  30%  { transform: translateX(-1.5px) rotate(-0.6deg); }
-  40%  { transform: translateX(1.5px)  rotate(0.6deg); }
-  50%  { transform: translateX(-1px)   rotate(-0.4deg); }
-  60%  { transform: translateX(1px)    rotate(0.4deg); }
-  70%  { transform: translateX(-0.6px) rotate(-0.3deg); }
-  80%  { transform: translateX(0.6px)  rotate(0.3deg); }
-  90%  { transform: translateX(-0.3px) rotate(-0.15deg); }
-  100% { transform: translateX(0)      rotate(0deg); }
+  0%   { transform: translate(-5px, 5px) rotate(-2deg); }
+  10%  { transform: translate(5px, -5px) rotate(2deg); }
+  20%  { transform: translate(-5px, 5px) rotate(-2deg); }
+  30%  { transform: translate(5px, -5px) rotate(2deg); }
+  40%  { transform: translate(-5px, 5px) rotate(-2deg); }
+  50%  { transform: translate(5px, -5px) rotate(2deg); }
+  60%  { transform: translate(-5px, 5px) rotate(-2deg); }
+  70%  { transform: translate(5px, -5px) rotate(2deg); }
+  80%  { transform: translate(-5px, 5px) rotate(-2deg); }
+  90%  { transform: translate(5px, -5px) rotate(2deg); }
+  100% { transform: translate(-5px, 5px) rotate(-2deg); }
 }
+
 
 /* Respect users who prefer reduced motion: disable shake and reduce glow intensity */
 @media (prefers-reduced-motion: reduce) {
@@ -913,6 +914,12 @@ span .bubble_text{
 
 
 
+.singularity {
+
+    color: black;
+    text-shadow: 0px 2px 2px #f00000, 0px 0px 3px #301934, 2px 2px #663702;
+
+}
 .glowies-text {
   /* Make the custom tag behave like a block element */
   display: block;
@@ -930,6 +937,50 @@ span .bubble_text{
     0 0 40px #0f0,
     0 0 80px #0f0;
 }
+
+/* Usage: add class="flag-text" to any inline element (span, a) or block (h1, p) */
+/* More legible American flag text */
+.flag-text {
+  /* Flag colors */
+  --flag-red: #B22234;
+  --flag-white: #FFFFFF;
+  --flag-blue: #3C3B6E;
+
+  /* Smooth gradient with red, white, blue */
+  background: linear-gradient(
+    to right,
+    var(--flag-red) 0%,
+    var(--flag-red) 30%,
+    var(--flag-white) 30%,
+    var(--flag-white) 60%,
+    var(--flag-blue) 60%,
+    var(--flag-blue) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-weight: 700; /* bold for better visibility */
+  display: inline-block;
+  line-height: 1;
+}
+
+
+/* Optional: add subtle outline/fallback for very old browsers */
+.flag-text.fallback-outline {
+  color: var(--flag-blue);
+  text-shadow:
+    1px 0 var(--flag-red),
+    -1px 0 var(--flag-red),
+    0 1px var(--flag-white),
+    0 -1px var(--flag-white);
+  -webkit-text-fill-color: unset;
+  background: none;
+}
+
+
 
 #log_body p{
     margin: 0;
